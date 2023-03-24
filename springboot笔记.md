@@ -89,3 +89,39 @@
      * @Primary:让当前Bean生效
      * @Autowired+@Qualifier("bean名称")
      * Resource(name="bean名称"),默认按照名称注入
+<br><br>
+4. lombok
+   * 是一个实用的java类库，通过注解的形式自动生成构造器，并可以自动化生成日志变量
+   * ![img_1.png](img_1.png) 
+
+
+#### Mybatis
+1. 新增数据时返回主键
+   * @Options(useGeneratedKeys=ture,keyProperty="id")
+<br>
+2. 数据封装
+   * 实体类属性名和数据库表查询返回字段名相同，mybatis会自动封装
+   * 不一致则不会封装
+     1. 字段起别名
+     2. 通过@Results，@Result注解手动封装
+        ```
+         @Results({
+             @Result(column = "dept_id",property = "deptId"),
+             @Result(column = "create_time",property = "createTime"),
+             @Result(column = "update_time",property = "updateTime")
+         })
+        ```
+     3. 开启mybatis的驼峰命名自动映射开关a_column->aColumn
+        * mybatis.configuration.map-underscore-to-camel-case=true
+<br><br>
+3. 动态sql
+   * \<foreach collection="" item="" separator="" open="" close="">
+   ```
+   collection:遍历的集合
+   item：遍历出来的元素
+   separator:分隔符
+   open:遍历前拼接的sql片段
+   close:遍历结束拼接的sql片段
+   ```
+   * \<sql id=>：定义可以重复的sql片段
+   * 和\<include>：应用定义的sql片段
