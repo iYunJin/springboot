@@ -114,14 +114,14 @@
      3. 开启mybatis的驼峰命名自动映射开关a_column->aColumn
         * mybatis.configuration.map-underscore-to-camel-case=true
 <br><br>
-3. 动态sql
+3. 动态sql  
    * \<foreach collection="" item="" separator="" open="" close="">
-   ```
-   collection:遍历的集合
-   item：遍历出来的元素
-   separator:分隔符
-   open:遍历前拼接的sql片段
-   close:遍历结束拼接的sql片段
-   ```
+     ```
+     collection:遍历的集合
+     item：遍历出来的元素
+     separator:分隔符
+     open:遍历前拼接的sql片段
+     close:遍历结束拼接的sql片段
+     ```
    * \<sql id=>：定义可以重复的sql片段
    * 和\<include>：应用定义的sql片段
