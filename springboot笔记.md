@@ -98,20 +98,22 @@
 #### Mybatis
 1. 新增数据时返回主键
    * @Options(useGeneratedKeys=ture,keyProperty="id")
-<br>
-2. 数据封装
-   * 实体类属性名和数据库表查询返回字段名相同，mybatis会自动封装
-   * 不一致则不会封装
-     1. 字段起别名
-     2. 通过@Results，@Result注解手动封装
-        ```
+<br>  
+
+2. 数据封装  
+   * 实体类属性名和数据库表查询返回字段名相同，mybatis会自动封装  
+   * 不一致则不会封装  
+     1. 字段起别名  
+     2. 通过@Results，@Result注解手动封装  
+        ```  
          @Results({
              @Result(column = "dept_id",property = "deptId"),
              @Result(column = "create_time",property = "createTime"),
              @Result(column = "update_time",property = "updateTime")
          })
-        ```
-     3. 开启mybatis的驼峰命名自动映射开关a_column->aColumn
+        ```  
+        
+     3. 开启mybatis的驼峰命名自动映射开关a_column->aColumn  
         * mybatis.configuration.map-underscore-to-camel-case=true
 <br><br>
 3. 动态sql  
